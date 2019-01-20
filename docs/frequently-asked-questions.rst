@@ -126,19 +126,6 @@ to create an independent copy of the storage value in memory.
 On the other hand, ``h(x)`` successfully modifies ``x`` because only
 a reference and not a copy is passed.
 
-What does the following strange check do in the Custom Token contract?
-======================================================================
-
-::
-
-    require((balanceOf[_to] + _value) >= balanceOf[_to]);
-
-Integers in Solidity (and most other machine-related programming languages) are restricted to a certain range.
-For ``uint256``, this is ``0`` up to ``2**256 - 1``. If the result of some operation on those numbers
-does not fit inside this range, it is truncated. These truncations can have
-`serious consequences <https://en.bitcoin.it/wiki/Value_overflow_incident>`_, so code like the one
-above is necessary to avoid certain attacks.
-
 More Questions?
 ===============
 
